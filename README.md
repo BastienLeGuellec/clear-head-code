@@ -4,7 +4,7 @@ Reproducibility package for:
 
 > **LLM-generated lay summaries improve patient satisfaction but not objective
 > comprehension of radiology reports: a randomized controlled trial**
-> Le Guellec B, Bentegeac R, Tran VT, Amouyel P, Hacein-Bey L, Pruvo JP,
+> Le Guellec B, Bentegeac R, Tran VT, El Homsi M, Amouyel P, Hacein-Bey L, Pruvo JP,
 > Kuchcinski G\*, Hamroun A\* 
 
 ---
@@ -31,6 +31,7 @@ project_root/
 ├── graphs/              # Created automatically on first run
 └── scripts/             # ← this directory
     ├── analysis.py
+    ├── generate_summaries.py
     ├── figure2_primary.py
     ├── figure3_likert.py
     └── figure4_forest.py
@@ -46,7 +47,7 @@ De-identified data are available upon reasonable request to the corresponding
 author, subject to a data sharing agreement with ComPaRe.
 
 The six study vignettes (original reports + LLM-generated summaries) are
-provided in `data/selected_reports_with_summaries.xlsx`.
+provided in `selected_reports_with_summaries.xlsx`.
 
 ---
 
@@ -110,7 +111,7 @@ arm × subgroup interaction terms.
 ## LLM prompt
 
 The exact prompt used to generate patient summaries with Mistral Small 3.2 is
-provided in `data/llm_prompt.txt`.  Summaries were generated in a zero-shot
+provided in `generate_summaries.py`.  Summaries were generated in a zero-shot
 setting with `temperature = 0` for deterministic output.
 
 ---
@@ -119,13 +120,3 @@ setting with `temperature = 0` for deterministic output.
 
 Code is released under the **MIT License** (see `LICENSE`).
 The study vignettes are released under **CC BY 4.0**.
-
----
-
-## Citation
-
-```
-Le Guellec B, et al. LLM-generated lay summaries improve patient satisfaction
-but not objective comprehension of radiology reports: a randomized controlled
-trial. Nature Medicine (under review), 2026.
-```
